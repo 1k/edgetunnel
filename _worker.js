@@ -5447,10 +5447,10 @@ async function 生成随机IP(request, count = 16, 指定端口 = -1) {
 	const 查询参数运营商 = String(url.searchParams.get('cnIspCode') || '').toLowerCase();
 	const 运营商文件标识 = ['ct', 'cu', 'cmcc', 'cf'].includes(查询参数运营商) ? 查询参数运营商 : 识别运营商(request);
 	const 运营商名称映射 = {
-		cmcc: '移动凤凰城001',
-		cu: '联通凤凰城001',
-		ct: '电信凤凰城001',
-		cf: '官方凤凰城001',
+		cmcc: '移动凤凰城A',
+		cu: '联通凤凰城A',
+		ct: '电信凤凰城A',
+		cf: '官方凤凰城A',
 	};
 	const cidr_url = 运营商文件标识 === 'cf' ? `https://raw.githubusercontent.com/${特征码字典[1]}/${特征码字典[1]}/main/CF-CIDR.txt` : `https://raw.githubusercontent.com/${特征码字典[1]}/${特征码字典[1]}/main/CF-CIDR/${运营商文件标识}.txt`;
 	const cfname = 运营商名称映射[运营商文件标识] || 'CF官方优选';
